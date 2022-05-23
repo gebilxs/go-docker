@@ -47,7 +47,7 @@ var runCommand = cli.Command{
 		// cmdArray 为容器运行后，执行的第一个命令信息
 		// cmdArray[0] 为命令内容, 后面的为命令参数
 		var cmdArray []string
-		for _, arg := range context.Args() {
+		for _, arg := range context.Args().Tail() {
 			cmdArray = append(cmdArray, arg)
 		}
 		Run(cmdArray, tty, res)
